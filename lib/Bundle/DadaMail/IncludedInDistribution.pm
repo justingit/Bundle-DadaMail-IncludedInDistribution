@@ -49,6 +49,8 @@ CGI::Application
 
 CGI::Application::Plugin::RateLimit
 
+CGI::Lite - used for kcfinder_session - why this and not CGI?
+
 CGI::Session
 
 CGI::Session::ExpireSessions
@@ -90,6 +92,8 @@ File::ReadBackwards
 File::Slurp - only used in Core5Filemanager - should be modified to not use 
 
 File::Slurper
+
+Geo::IP::PurePerl
 
 Google::reCAPTCHA::v3
 
