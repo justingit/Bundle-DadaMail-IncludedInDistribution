@@ -1,6 +1,6 @@
 package Bundle::DadaMail::IncludedInDistribution;
 
-$VERSION = '0.0.1';
+$VERSION = '0.0.2';
 
 1;
 
@@ -8,7 +8,7 @@ __END__
 
 =head1 NAME 
 
-C<Bundle::DadaMail::IncludedInDistribution> - CPAN Bundle of modules used in Dada Mail that are included within the distribution.
+C<Bundle::DadaMail::IncludedInDistribution> -  Bundle of CPAN modules used in Dada Mail that are included within the distribution.
 
 =head1 SYNOPSIS
 
@@ -20,18 +20,35 @@ or similar CPAN module installer method
 
 Dada Mail is a self-hosted mailing list manager. 
 
-C<Bundle::DadaMail::IncludedInDistribution> is a CPAN Bundle of all CPAN modules used by Dada Mail that are also included within the distribution. 
+C<Bundle::DadaMail::IncludedInDistribution> is a CPAN Bundle of (most) all CPAN modules used by Dada Mail that are also included within the distribution. 
 
-Dada Mail requires other CPAN modules to run, but those are NOT listed in this Bundle. See, C<Bundle::DadaMail>
+Portability and easy of installation are two big goals of the Dada Mail project. Dada Mail requires other CPAN modules to run, but those are NOT listed in this Bundle. See, C<Bundle::DadaMail>. We assume these modules will be available in the Perl ecosystem, but that's obviously not always the case. System requirements to run Dada Mail are listed here: 
+
+L<https://dadamailproject.com/d/requirements.pod.html>
  
 The included perllib that's created is massaged slightly to remove any platform-specific code. 
 
-Optional modules that Dada Mail can utilize to extend its functionality are listed in, C<Bundle::DadaMail::Optional> 
+Optional modules that Dada Mail can utilize to extend its functionality are listed in, C<Bundle::DadaMailXXL>.  
+
+These CPAN modules are bundled to make installing the app easier to non-developers. 
+
+In the past, (Dada Mail was initially written in 1999) the modules included were not well documented, so this is an attempt to document which modules are included, and have a way to keep them up to date. 
+
+
+=head1 Future Goals 
+
+Because of the long history of the app, several now questionable module selections have been made, mostly where several modules provide the same/similar capabilities - example using C<CGI> and C<CGI::Lite>; some modules seem to provide capabilities that are actual in core, like: C<Digest::SHA::PurePerl>, and some modules may not need to be listed, as their simply prerequsites to other modules, and will be installed anyways, like: C<Class::Accessor>. One goal is to straighten that all out.
+
+Removing the included Perl library from the app (found in, dada/DADA/perllib of the distribution) and installing this Bundle should be a reasonagble thing to do. In the future, it's a goal to have this as an option for the app upon installation/upgrade. 
+
 
 =head1 See Also
 
 L<https://dadamailproject.com>
 
+L<https://github.com/justingit/dada-mail/>
+
+L<https://github.com/justingit/Bundle-DadaMail-IncludedInDistribution>
 
 =head1 CONTENTS
 
@@ -49,7 +66,7 @@ CGI::Application
 
 CGI::Application::Plugin::RateLimit
 
-CGI::Lite - used for kcfinder_session - why this and not CGI?
+CGI::Lite - used for kcfinder_session
 
 CGI::Session
 
