@@ -1,6 +1,6 @@
 package Bundle::DadaMail::IncludedInDistribution;
 
-$VERSION = '0.0.2';
+$VERSION = '0.0.3';
 
 1;
 
